@@ -28,8 +28,8 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 		int [][] rotateLeft = new int [rows][columns];
 		for (int r = 0; r < rows; r++) {
 			for (int c = 0; c < columns; c++) {
-				int rotateLeftRow = c;
-				int rotateLeftColumn = rows - r;
+				int rotateLeftRow = rows - c;
+				int rotateLeftColumn = r;
 				rotateLeft[rotateLeftRow][rotateLeftColumn] = pixels[r][c];
 			}
 		}	
