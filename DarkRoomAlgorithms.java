@@ -32,9 +32,9 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 				int rotateLeftColumn = rows - r;
 				rotateLeft[rotateLeftRow][rotateLeftColumn] = pixels[r][c];
 			}
-			
-		}
-		return null;
+		}	
+		GImage rotateLeftImage = new GImage(rotateLeft);
+		return rotateLeftImage;
 	}
 
 	public GImage rotateRight(GImage source) {
