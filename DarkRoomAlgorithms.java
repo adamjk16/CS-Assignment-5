@@ -13,12 +13,27 @@ import acm.graphics.*;
 
 public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 
+	private int rows (int [][] source) {
+		return source.length;
+	}
+	
+	private int columns (int [][] source) {
+		return source[0].length;
+	}
+	
 	public GImage rotateLeft(GImage source) {
 		int [][] pixels = source.getPixelArray();
 		int rows = rows(pixels);
 		int columns = columns(pixels);
 		int [][] rotateLeft = new int [rows][columns];
-		
+		for (int r = 0; r < rows; r++) {
+			for (int c = 0; c < columns; c++) {
+				int rotateLeftRow = c;
+				int rotateLeftColumn = rows - r;
+				rotateLeft[rotateLeftRow][rotateLeftColumn] = pixels[r][c];
+			}
+			
+		}
 		return null;
 	}
 
