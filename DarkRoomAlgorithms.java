@@ -131,13 +131,13 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 	}
 
 	public GImage crop(GImage source, int cropX, int cropY, int cropWidth, int cropHeight) {
-		int luminosity = computeLuminosity(red, green, blue);
 		
 		return null;
 	}
 
 	public GImage equalize(GImage source) {
-		// TODO
+		int luminosity = computeLuminosity(red, green, blue);
+		
 		return null;
 	}
 }
