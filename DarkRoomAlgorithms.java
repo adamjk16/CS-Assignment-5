@@ -70,8 +70,15 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 	}
 
 	public GImage negative(GImage source) {
-		// TODO
-		return null;
+		int [][] pixels = source.getPixelArray();
+		int rows = rows(pixels);
+		int columns = columns(pixels);
+		int [][] flipHorizontal = new int [rows][columns];
+		for (int r = 0; r < rows; r++) {
+			for (int c = 0; c < columns; c++) {
+				int negativePixel = pixels[r][c];
+				int r = 255 - 
+			}
 	}
 
 	public GImage greenScreen(GImage source) {
