@@ -149,5 +149,5 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 				int luminosity = computeLuminosity(red, green, blue);
 			}
 		}
-	}
+	} 
 }
