@@ -98,7 +98,17 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 				int red = GImage.getRed(greenScreenPixel); 
 				int green = GImage.getGreen(greenScreenPixel);
 				int blue = GImage.getBlue(greenScreenPixel);
-	}
+				int max = Math.max(red, blue);
+				if (green >= max) {
+					pixels [r][c] = GImage.createRGBPixel (red, green, blue, 0);
+				} else {
+					pixels [r][c] = GImage.createRGBPixel (red, green, blue);
+				}
+			}
+		}	
+		GImage greenScreenImage = new GImage(greenScreen);
+		return greenScreenImage;
+	}	
 
 	public GImage blur(GImage source) {
 		// TODO
