@@ -25,7 +25,7 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 		int [][] pixels = source.getPixelArray();
 		int rows = rows(pixels);
 		int columns = columns(pixels);
-		int [][] rotateLeft = new int[columns][rows];
+		int [][] rotateLeft = new int[rows][columns];
 		for (int r = 0; r < rows; r++) {
 			for (int c = 0; c < columns; c++) {
 				int rotateLeftRow = (columns - 1)  - c;
