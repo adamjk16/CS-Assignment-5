@@ -136,10 +136,7 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 	}
 
 	public GImage equalize(GImage source) {
-		int red = GImage.getRed(source); 
-		int green = GImage.getGreen(source);
-		int blue = GImage.getBlue(source);
-		int luminosity = computeLuminosity(red, green, blue);
+	
 		
 		return null;
 	}
