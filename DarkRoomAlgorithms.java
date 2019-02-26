@@ -146,6 +146,7 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 				int red = GImage.getRed(color); 
 				int green = GImage.getGreen(color);
 				int blue = GImage.getBlue(color);
+				int luminosity = computeLuminosity(red, green, blue);
 			}
 		}
 	}
