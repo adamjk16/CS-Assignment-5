@@ -141,7 +141,7 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 		int columns = columns(pixels);
 		int [][] equalize = new int [rows][columns];
 		for (int r = 0; t< rows; r++) {
-			for (int c = 0; c <)
+			for (int c = 0; c < columns; )
 		}
 		
 		return null;
