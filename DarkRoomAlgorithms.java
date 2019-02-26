@@ -120,6 +120,9 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 				int red = GImage.getRed(blurPixel); 
 				int green = GImage.getGreen(blurPixel);
 				int blue = GImage.getBlue(blurPixel);
+				
+				
+				blur[r][c] = GImage.createRGBPixel(red, blue, green);
 			}
 		}	
 		return null;
