@@ -88,8 +88,16 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 	}
 
 	public GImage greenScreen(GImage source) {
-		// TODO
-		return null;
+		int [][] pixels = source.getPixelArray();
+		int rows = rows(pixels);
+		int columns = columns(pixels);
+		int [][] greenScreen = new int [rows][columns];
+		for (int r = 0; r < rows; r++) {
+			for (int c = 0; c < columns; c++) {
+				int greenScreenPixel = pixels[r][c];
+				int red = GImage.getRed(greenScreenPixel); 
+				int green = GImage.getGreen(greenScreenPixel);
+				int blue = GImage.getBlue(greenScreenPixel);
 	}
 
 	public GImage blur(GImage source) {
