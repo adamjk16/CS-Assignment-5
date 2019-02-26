@@ -148,7 +148,5 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 				int blue = GImage.getBlue(color);
 			}
 		}
-		
-		return null;
 	}
 }
