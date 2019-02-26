@@ -111,8 +111,13 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 
 	public GImage blur(GImage source) {
 		int [][] pixels = source.getPixelArray();
+		int rows = rows(pixels);
+		int columns = columns(pixels);
 		int [][] blur = new int [rows][columns];
-		
+		for (int r = 0; r < rows; r++) {
+			for (int c = 0; c < columns; c++) {
+				
+			}
 	}
 
 	public GImage crop(GImage source, int cropX, int cropY, int cropWidth, int cropHeight) {
