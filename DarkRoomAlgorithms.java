@@ -142,10 +142,10 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 		int [][] equalize = new int [rows][columns];
 		for (int r = 0; r < rows; r++) {
 			for (int c = 0; c < columns; c++) {
-				int 
-				int red = GImage.getRed(b); 
-				int green = GImage.getGreen(blurPixel);
-				int blue = GImage.getBlue(blurPixel);
+				int color = pixels[r][c];
+				int red = GImage.getRed(color); 
+				int green = GImage.getGreen(color);
+				int blue = GImage.getBlue(color);
 			}
 		}
 		
