@@ -118,6 +118,8 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 			for (int c = 0; c < columns; c++) {
 				
 			}
+		}	
+		return null;
 	}
 
 	public GImage crop(GImage source, int cropX, int cropY, int cropWidth, int cropHeight) {
