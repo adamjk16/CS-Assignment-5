@@ -123,6 +123,8 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 				
 				
 				blur[r][c] = GImage.createRGBPixel(red, blue, green);
+				
+				//find some way to loop through each neighbor (for loop?)
 			}
 		}	
 		return null;
