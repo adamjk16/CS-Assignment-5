@@ -54,8 +54,19 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 	}
 
 	public GImage flipHorizontal(GImage source) {
-		// TODO
-		return null;
+		int [][] pixels = source.getPixelArray();
+		int rows = rows(pixels);
+		int columns = columns(pixels);
+		int [][] flipHorizontal = new int [columns][rows];
+		for (int r = 0; r < rows; r++) {
+			for (int c = 0; c < columns; c++) {
+				int flipRow = r;
+				int flipColumn = (columns - 1)  - c;
+				flipHorizontal[flipRow][flipColumn] = pixels[r][c];
+			}
+		}	
+		GImage flippedImage = new GImage(flipHorizontal);
+		return flippedImage;
 	}
 
 	public GImage negative(GImage source) {
