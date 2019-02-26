@@ -111,7 +111,7 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 
 	public GImage blur(GImage source) {
 		int [][] pixels = source.getPixelArray();
-		int [][] blur = new int [rows] columns];
+		int [][] blur = new int [rows] [columns];
 		
 	}
 
