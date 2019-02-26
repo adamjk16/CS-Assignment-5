@@ -136,7 +136,7 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 	}
 
 	public GImage equalize(GImage source) {
-	
+		
 		
 		return null;
 	}
