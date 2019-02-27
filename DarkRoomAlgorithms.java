@@ -116,17 +116,17 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 		int [][] blur = new int [rows][columns];
 		for (int r = 0; r < rows; r++) {
 			for (int c = 0; c < columns; c++) {
+				for (int i = r - 1; i<= r + 1; i++) {
+					for (int j = c - 1; j <= c + 1; j++) {
+						
+					}
 				int blurPixel = pixels[r][c];
 				int red = GImage.getRed(blurPixel); 
 				int green = GImage.getGreen(blurPixel);
 				int blue = GImage.getBlue(blurPixel);
 				
 				
-				blur[r][c] = GImage.createRGBPixel(red, blue, green);
-		for (int i = r - 1; i<= r + 1; i++) {
-			for (int j = c - 1; j <= c + 1; j++) {
-				
-			}
+				blur[r][c] = GImage.createRGBPixel(red, blue, green)
 		}
 				//find some way to loop through each neighbor (for loop?)
 			}
