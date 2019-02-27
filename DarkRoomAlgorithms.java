@@ -124,19 +124,9 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 				}
 			}
 		}	
-				int blurPixel = pixels[r][c];
-				int red = GImage.getRed(blurPixel); 
-				int green = GImage.getGreen(blurPixel);
-				int blue = GImage.getBlue(blurPixel);
-				
-				
-				blur[r][c] = GImage.createRGBPixel(red, blue, green)
-		}
-				//find some way to loop through each neighbor (for loop?)
-			}
-		}	
-		return null;
+	
 	}
+
 
 	public GImage crop(GImage source, int cropX, int cropY, int cropWidth, int cropHeight) {
 		
