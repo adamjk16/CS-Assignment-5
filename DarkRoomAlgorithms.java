@@ -154,6 +154,10 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 		
 	}
 	
+	public void mouseClicked (MouseEvent e) {
+		int x = e.getX();
+	}
+	
 	public GImage equalize(GImage source) {
 		int[] equalize = luminosityHistogram(source);
 		int[] cumulativeEqualize = cumulativeLuminosityHistogram(equalize);
