@@ -109,7 +109,10 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 		return greenScreenImage;
 	}	
 	
-	private int 
+	private int redBlur;
+	private int greenBlur;
+	private int blueBlur;
+	
 	public GImage blur(GImage source) {								//received help in LAIR
 		int [][] pixels = source.getPixelArray();
 		int rows = rows(pixels);
@@ -125,15 +128,18 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 					int x = columns + c;
 					int y = rows + r;
 					red = GImage.getRed(pixels[y][x]);
+					redBlur+=red; 
 					green = GImage.getGreen(pixels[y][x]);
+					greenBlur+=green;
 					blue = GImage.getBlue(pixels[y][x]);
+					blueBlur+=blue;
 					}
 				}
 			}
 		}
-		int avgRed = red / 9;
-		int avgGreen = green / 9;
-		int avgBlue = blue / 9;
+		int avgRed = redBlur / 9;
+		int avgGreen = greenBlur / 9;
+		int avgBlue = blueBlur / 9;
 		blur[rows][columns] = GImage.createRGBPixel(avgRed, avgGreen, avgBlue);
 	GImage blurredImage = new GImage(blur);
 	return blurredImage;
