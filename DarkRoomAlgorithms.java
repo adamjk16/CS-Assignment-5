@@ -120,7 +120,9 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 					for (int j = c - 1; j <= c + 1; j++) {
 					int x = columns + c;
 					int y = rows + r;
-					int red = GImage.getRed[][];
+					int red = GImage.getRed(pixels[y][x]);
+					int green = GImage.getGreen(pixels[y][x]);
+					int blue = GImage.getBlue(pixels[y][x]);
 					
 					}
 				}
