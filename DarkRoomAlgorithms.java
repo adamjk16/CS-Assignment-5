@@ -167,6 +167,19 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 	}
 	
 	private int [] increaseContrast(GImage source) {
-		
+		int [][] pixels = source.getPixelArray();
+		int rows = rows(pixels);
+		int columns = columns(pixels);
+		int [][] contrast = new int [rows][columns];
+		for (int r = 0; r < rows; r++) {
+			for (int c = 0; c < columns; c++) {
+				int color = pixels[r][c];
+				int red = GImage.getRed(color); 
+				int green = GImage.getGreen(color);
+				int blue = GImage.getBlue(color);
+				int luminosity = computeLuminosity(red, green, blue);
+				int numPixels = cumulativeLuminosityArray[luminosity];
+				
+			}
 	}
 }
