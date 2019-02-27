@@ -136,7 +136,7 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 			int avgRed = redTotal / avgPixels;
 			int avgGreen = greenTotal / avgPixels;
 			int avgBlue = blueTotal / avgPixels;
-			blur[r][columns] = GImage.createRGBPixel(avgRed, avgGreen, avgBlue);		
+			blur[r][c] = GImage.createRGBPixel(avgRed, avgGreen, avgBlue);		
 			}
 		}
 		GImage blurredImage = new GImage(blur);
