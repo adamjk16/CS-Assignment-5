@@ -136,6 +136,7 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 	}
 
 	public GImage equalize(GImage source) {
+		int[] equalize = luminosityHistogram(source);
 		
 	
 	private int [] luminosityHistogram(GImage source) {
@@ -154,5 +155,9 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 			}
 		}
 		return equalize;
-	} 
+	}
+	
+	private int [] cumulativeLuminosityHistogram(GImage source) {
+		
+	}
 }
