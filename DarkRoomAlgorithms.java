@@ -109,7 +109,7 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 		return greenScreenImage;
 	}	
 
-	public GImage blur(GImage source) {
+	public GImage blur(GImage source) {								//received help in LAIR
 		int [][] pixels = source.getPixelArray();
 		int rows = rows(pixels);
 		int columns = columns(pixels);
