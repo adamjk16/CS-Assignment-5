@@ -112,6 +112,7 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 	private int redBlur;
 	private int greenBlur;
 	private int blueBlur;
+	private int avgPixels;
 	
 	public GImage blur(GImage source) {								//received help in LAIR
 		int [][] pixels = source.getPixelArray();
@@ -130,6 +131,7 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 						greenBlur+=green;
 						int blue = GImage.getBlue(pixels[y][x]);
 						blueBlur+=blue;
+						avgPixels++;
 					}
 				}
 				int avgRed = redBlur / 9;
