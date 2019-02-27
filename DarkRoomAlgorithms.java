@@ -148,12 +148,12 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 
 	public GImage crop(GImage source, int cropX, int cropY, int cropWidth, int cropHeight) {
 		int [][] pixels = source.getPixelArray();
-		cropX = e.getX();
+		addMouseListeners();
 		return null;
 	}
-	
+
 	public void mouseClicked(MouseEvent e) {
-		int x1 = e.getX();
+		int cropX = e.getX();
 	}
 
 	public GImage equalize(GImage source) {
