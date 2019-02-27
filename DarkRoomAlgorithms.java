@@ -130,6 +130,7 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 						greenTotal += green;
 						int blue = GImage.getBlue(pixels[i][j]);
 						blueTotal += blue;
+						avgPixels++;
 					}
 				}
 			int avgRed = redTotal / avgPixels;
