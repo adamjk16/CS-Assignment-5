@@ -123,10 +123,10 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 		int [][] blur = new int [rows][columns];
 		for (int r = 0; r < rows; r++) {
 			for (int c = 0; c < columns; c++) {
+				int x = columns + c;
+				int y = rows + r;
 				for (int i = r - 1; i<= r + 1; i++) {
 					for (int j = c - 1; j <= c + 1; j++) {
-					int x = columns + c;
-					int y = rows + r;
 					red = GImage.getRed(pixels[y][x]);
 					redBlur+=red; 
 					green = GImage.getGreen(pixels[y][x]);
