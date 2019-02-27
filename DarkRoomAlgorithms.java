@@ -165,4 +165,8 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 		}
 		return cumulativeEqualize;
 	}
+	
+	private int [] increaseContrast(GImage source) {
+		
+	}
 }
