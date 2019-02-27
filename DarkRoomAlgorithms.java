@@ -138,8 +138,8 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 				blur[rows][columns] = GImage.createRGBPixel(avgRed, avgGreen, avgBlue);		
 			}
 		}
-	GImage blurredImage = new GImage(blur);
-	return blurredImage;
+		GImage blurredImage = new GImage(blur);
+		return blurredImage;
 	}
 
 
