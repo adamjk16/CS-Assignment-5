@@ -153,7 +153,7 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 	}
 	
 	public void mouseClicked (MouseEvent e) {
-		int x = e.getX();
+		x = e.getX();
 	}
 
 	public GImage equalize(GImage source) {
