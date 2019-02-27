@@ -113,6 +113,9 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 		int [][] pixels = source.getPixelArray();
 		int rows = rows(pixels);
 		int columns = columns(pixels);
+		int red = 0;
+		int green = 0;
+		int blue = 0;
 		int [][] blur = new int [rows][columns];
 		for (int r = 0; r < rows; r++) {
 			for (int c = 0; c < columns; c++) {
@@ -120,14 +123,16 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 					for (int j = c - 1; j <= c + 1; j++) {
 					int x = columns + c;
 					int y = rows + r;
-					int red = GImage.getRed(pixels[y][x]);
-					int green = GImage.getGreen(pixels[y][x]);
-					int blue = GImage.getBlue(pixels[y][x]);
-					
+					red = GImage.getRed(pixels[y][x]);
+					green = GImage.getGreen(pixels[y][x]);
+					blue = GImage.getBlue(pixels[y][x]);
 					}
 				}
 			}
-		}	
+		}
+		int avgRed = red / 9;
+		int avgGreen = green / 9;
+		int avgBlue = blue / 9;
 	GImage blurredImage = new GImage(blur);
 	return blurredImage;
 	}
