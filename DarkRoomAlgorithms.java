@@ -139,7 +139,7 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 		int [][] pixels = source.getPixelArray();
 		int rows = rows(pixels);
 		int columns = columns(pixels);
-		int [][] equalize = new int [rows][columns];
+		int [] equalize = new int [255];
 		for (int r = 0; r < rows; r++) {
 			for (int c = 0; c < columns; c++) {
 				int color = pixels[r][c];
@@ -147,6 +147,7 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 				int green = GImage.getGreen(color);
 				int blue = GImage.getBlue(color);
 				int luminosity = computeLuminosity(red, green, blue);
+				equalize[luminosity]++;
 			}
 		}
 	} 
