@@ -156,8 +156,8 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 	public void run() {
 		addMouseListeners();
 	}
-	
-	public GImage mouseClicked (MouseEvent e) {
+
+	public void mouseClicked (MouseEvent e) {
 		int x = e.getX();
 		int y = e.getY();
 		return null;
