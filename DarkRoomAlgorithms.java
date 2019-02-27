@@ -124,7 +124,8 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 				}
 			}
 		}	
-	
+	GImage blurredImage = new GImage(blur);
+	return blurredImage;
 	}
 
 
