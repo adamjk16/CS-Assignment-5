@@ -138,6 +138,7 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 	public GImage equalize(GImage source) {
 		int[] equalize = luminosityHistogram(source);
 		int[] cumulativeEqualize = cumulativeLuminosityHistogram(source);
+		int[][] contrast = increaseContrast(cumulativeEqualize, source);
 	}	
 	
 	private int [] luminosityHistogram(GImage source) {
@@ -166,7 +167,7 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 		return cumulativeEqualize;
 	}
 	
-	private int [] increaseContrast(cumulativeEqualize, GImage source) {
+	private int [] increaseContrast(int [] cumulativeEqualize, GImage source) {
 		int [][] pixels = source.getPixelArray();
 		int rows = rows(pixels);
 		int columns = columns(pixels);
@@ -181,6 +182,10 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 				int numPixelsLess = cumulativeEqualize[luminosity];
 				int numPixelsTotal = rows * columns;
 				int newRGB = 255 * (numPixelsLess/numPixelsTotal);
+				contrast[r][c] = GImage.createRGBPixel(red, blue, green);
 			}
+		}	
+		return contrast;
 	}
-}
+}	
+
