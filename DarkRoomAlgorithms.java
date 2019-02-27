@@ -115,7 +115,7 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 		int [][] pixels = source.getPixelArray();
 		int [][] blur = new int [pixels.length][pixels[0].length];
 		for (int r = 0; r < pixels.length; r++) {
-			for (int c = 0; c < pixels[0].length; c++) {
+			for (int c = 0; c < pixels[r].length; c++) {
 				int redTotal = 0;
 				int greenTotal = 0;
 				int blueTotal = 0;
