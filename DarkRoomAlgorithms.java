@@ -166,7 +166,7 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 		return cumulativeEqualize;
 	}
 	
-	private int [] increaseContrast(GImage source) {
+	private int [] increaseContrast(cumulativeEqualize, GImage source) {
 		int [][] pixels = source.getPixelArray();
 		int rows = rows(pixels);
 		int columns = columns(pixels);
@@ -178,7 +178,9 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 				int green = GImage.getGreen(color);
 				int blue = GImage.getBlue(color);
 				int luminosity = computeLuminosity(red, green, blue);
-				int numPixels = cumulativeEqualize[luminosity];
+				int numPixelsLess = cumulativeEqualize[luminosity];
+				int numPixelsTotal = rows * columns;
+				int newRGB = 
 				
 			}
 	}
