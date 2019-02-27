@@ -9,6 +9,8 @@
 
 // TODO: comment this file explaining its behavior
 
+import java.awt.event.MouseEvent;
+
 import acm.graphics.*;
 
 public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
@@ -151,7 +153,7 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 	}
 	
 	public void mouseClicked(MouseEvent e) {
-		
+		int x1 = e.getX();
 	}
 
 	public GImage equalize(GImage source) {
