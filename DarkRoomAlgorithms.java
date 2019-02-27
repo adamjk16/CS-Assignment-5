@@ -156,6 +156,7 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 		int x = e.getX();
 		int y = e.getY();
 		square.setLocation(x,y);
+		return null;
 	}
 
 	public GImage equalize(GImage source) {
