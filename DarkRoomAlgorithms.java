@@ -29,28 +29,30 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 	
 	public GImage rotateLeft(GImage source) {
 		int [][] pixels = source.getPixelArray();
-		int rows = rows(pixels);
-		int columns = columns(pixels);
-		int [][] rotateLeft = new int[columns][rows];
-		for (int r = 0; r < rows; r++) {
-			for (int c = 0; c < columns; c++) {;
-				rotateLeft[columns - 1 - c][r] = pixels[r][c];
+		int numberOfRows = rows(pixels);
+		int numberOfColumns = columns(pixels);
+		int [][] rotateLeft = new int[numberOfColumns][numberOfRows];
+		for (int row = 0; row < numberOfRows; row++) {
+			for (int column = 0; column < numberOfColumns; column++) {;
+				rotateLeft[numberOfColumns - 1 - column][row] = pixels[numberOfRows][numberOfColumns];			//flips and switches row and column
 			}
 		}	
 		GImage rotateLeftImage = new GImage(rotateLeft);
 		return rotateLeftImage;
 	}
 
+	/*
+	 * rotates an image 90 degrees clockwise
+	 */
+	
 	public GImage rotateRight(GImage source) {
 		int [][] pixels = source.getPixelArray();
-		int rows = rows(pixels);
-		int columns = columns(pixels);
-		int [][] rotateRight = new int [columns][rows];
-		for (int r = 0; r < rows; r++) {
-			for (int c = 0; c < columns; c++) {
-				int rotateLeftRow = c;
-				int rotateLeftColumn = (rows - 1)  - r;
-				rotateRight[rotateLeftRow][rotateLeftColumn] = pixels[r][c];
+		int numberOfRows = rows(pixels);
+		int numberOfColumns = columns(pixels);
+		int [][] rotateRight = new int [numberOfColumns][numberOfRows];
+		for (int row = 0; row < numberOfRows; row++) {
+			for (int column = 0; column < numberOfColumns; column++) {
+				rotateRight[column][numberOfRows - 1 - row] = pixels[row][column];
 			}
 		}	
 		GImage rotateRightImage = new GImage(rotateRight);
