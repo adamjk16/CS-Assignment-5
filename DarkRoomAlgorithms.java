@@ -146,7 +146,7 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 							greenTotal += green;
 							int blue = GImage.getBlue(blurPixels);
 							blueTotal += blue;
-							pixels [surroundingRow][surroundingColumn] = GImage.createRGBPixel(redTotal, greenTotal, blueTotal);
+							pixels [surroundingRow][surroundingColumn] = GImage.createRGBPixel(red, green, blue);
 							avgPixels++;
 						}
 					}
