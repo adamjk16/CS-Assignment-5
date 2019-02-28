@@ -23,6 +23,10 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 		return source[0].length;
 	}
 	
+	/*
+	 * rotates an image 90 degrees counterclockwise
+	 */
+	
 	public GImage rotateLeft(GImage source) {
 		int [][] pixels = source.getPixelArray();
 		int rows = rows(pixels);
