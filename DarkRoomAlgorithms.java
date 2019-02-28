@@ -127,18 +127,18 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 	
 	public GImage blur(GImage source) {								//received help in LAIR
 		int [][] pixels = source.getPixelArray();
-		int rows = rows(pixels);
-		int columns = columns(pixels);
-		int [][] blur = new int [rows][columns];
-		for (int r = 0; r < rows; r++) {
-			for (int c = 0; c < columns; c++) {
+		int numberOfRows = rows(pixels);
+		int numberOfColumns = columns(pixels);
+		int [][] blur = new int [numberOfRows][numberOfColumns];
+		for (int row = 0; row < numberOfRows; row++) {
+			for (int column = 0; column < numberOfColumns; column++) {
 				int redTotal = 0;
 				int greenTotal = 0;
 				int blueTotal = 0;
 				int avgPixels = 0;
-				for (int surroundingRows = r - 1; surroundingRows <= r + 1; surroundingRows++) {
-					for (int surroundingColumns = c - 1; surroundingColumns <= c + 1; surroundingColumns++) {
-						if (surroundingRows > 0 && surroundingRows < rows && surroundingColumns > 0 && surroundingColumns < columns) {	
+				for (int surroundingRows = row - 1; surroundingRows <= row + 1; surroundingRows++) {
+					for (int surroundingColumns = column - 1; surroundingColumns <= column + 1; surroundingColumns++) {
+						if (surroundingRows > 0 && surroundingRows < numberOfRows && surroundingColumns > 0 && surroundingColumns < numberOfColumns) {	
 							int red = GImage.getRed(pixels[surroundingColumns][surroundingRows]);
 							redTotal += red;
 							int green = GImage.getGreen(pixels[surroundingColumns][surroundingRows]);
@@ -152,7 +152,7 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 		int avgRed = redTotal / avgPixels;
 		int avgGreen = greenTotal / avgPixels;
 		int avgBlue = blueTotal / avgPixels;
-		blur[r][c] = GImage.createRGBPixel(avgRed, avgGreen, avgBlue);		
+		blur[row][column] = GImage.createRGBPixel(avgRed, avgGreen, avgBlue);		
 			}
 		}
 		GImage blurredImage = new GImage(blur);
