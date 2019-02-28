@@ -122,7 +122,7 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 	}	
 	
 	/*
-	 * (n
+	 * blurs an image
 	 */
 	
 	public GImage blur(GImage source) {								//received help in LAIR
@@ -151,28 +151,31 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 						}
 					}
 				}		
-		int avgRed = redTotal / avgPixels;
-		int avgGreen = greenTotal / avgPixels;
-		int avgBlue = blueTotal / avgPixels;
-		blur[row][column] = GImage.createRGBPixel(avgRed, avgGreen, avgBlue);		
+				int avgRed = redTotal / avgPixels;
+				int avgGreen = greenTotal / avgPixels;
+				int avgBlue = blueTotal / avgPixels;
+				blur[row][column] = GImage.createRGBPixel(avgRed, avgGreen, avgBlue);		
 			}
 		}
 		GImage blurredImage = new GImage(blur);
 		return blurredImage;
 	}
 	
+	/*
+	 * crops an image
+	 */
 
 	public GImage crop(GImage source, int cropX, int cropY, int cropWidth, int cropHeight) {
 		int [][] pixels = source.getPixelArray();
-		int [][] pixels1 = new int [cropHeight][cropWidth];
+		int [][] cropPixels = new int [cropHeight][cropWidth];
 		for (int r = 0; r < cropHeight; r++) {
 			for (int c = 0; c < cropWidth; c++) {
-				int oldPIxel  = cropY + r;
-				int oldPIxely  = cropX + c;
-				pixels1 [r][c] = pixels [oldPIxel][oldPIxely];
+				int oldPixelX  = cropY + r;
+				int oldPixelY  = cropX + c;
+				cropPixels [r][c] = pixels [oldPixelX][oldPixelY];
 			}
 		}
-		GImage cropImage = new GImage(pixels1);
+		GImage cropImage = new GImage(cropPixels);
 		return cropImage;	
 	}
 	
