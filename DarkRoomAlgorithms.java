@@ -52,7 +52,7 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 		int [][] rotateRight = new int [numberOfColumns][numberOfRows];
 		for (int row = 0; row < numberOfRows; row++) {
 			for (int column = 0; column < numberOfColumns; column++) {
-				rotateRight[column][numberOfRows - 1 - row] = pixels[row][column];
+				rotateRight[column][numberOfRows - 1 - row] = pixels[row][column]; 								//switches row and column
 			}
 		}	
 		GImage rotateRightImage = new GImage(rotateRight);
