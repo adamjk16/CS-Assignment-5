@@ -186,7 +186,7 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 		return equalizeImage;
 	}	
 	
-	private int [] luminosityHistogram(GImage source) {
+	private int[] luminosityHistogram(GImage source) {
 		int [][] pixels = source.getPixelArray();
 		int numberOfRows = rows(pixels);
 		int numberOfColumns = columns(pixels);
