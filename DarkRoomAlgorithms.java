@@ -191,7 +191,7 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 		int [][] pixels = source.getPixelArray();
 		int numberOfRows = rows(pixels);
 		int numberOfColumns = columns(pixels);
-		int [] equalize = new int [255];
+		int [] equalize = new int [256];
 		for (int row = 0; row < numberOfRows; row++) {
 			for (int column = 0; column < numberOfColumns; column++) {
 				int equalizePixel = pixels[row][column];
@@ -206,9 +206,9 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 	}
 	
 	private int [] cumulativeLuminosityHistogram(int[] equalize) {
-		int [] cumulativeEqualize = new int [255];
+		int [] cumulativeEqualize = new int [256];
 		cumulativeEqualize[0] = equalize[0];
-		for (int i = 0;i < cumulativeEqualize.length; i++) {
+		for (int i = 0;i < cumulativeEqualize.length - 1; i++) {
 			cumulativeEqualize[i + 1] = equalize[i+1] + cumulativeEqualize[i]; 
 		}
 		return cumulativeEqualize;
