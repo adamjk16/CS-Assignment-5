@@ -60,16 +60,18 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 	}
 	
 	/*
-	 * rotates an image 180 degrees
+	 * rotates an image 180 degree
 	 */
 	public GImage flipHorizontal(GImage source) {
 		int [][] pixels = source.getPixelArray();
-		int numberOfRows = rows(pixels);
-		int numberOfColumns = columns(pixels);
-		int [][] flipHorizontal = new int [numberOfRows][numberOfColumns];
-		for (int row = 0; row < numberOfRows; row++) {
-			for (int column = 0; column < numberOfColumns; column++) {
-				flipHorizontal[row][numberOfColumns - 1 - column] = pixels[numberOfRows][numberOfColumns];		//places each row of pixels in opposite order
+		int rows = rows(pixels);
+		int columns = columns(pixels);
+		int [][] flipHorizontal = new int [rows][columns];
+		for (int r = 0; r < rows; r++) {
+			for (int c = 0; c < columns; c++) {
+				int flipRow = r;
+				int flipColumn = (columns - 1)  - c;
+				flipHorizontal[flipRow][flipColumn] = pixels[r][c];
 			}
 		}	
 		GImage flippedImage = new GImage(flipHorizontal);
