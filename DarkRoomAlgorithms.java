@@ -159,6 +159,8 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 				pixels1 [r][c] = pixels [oldPIxel][oldPIxely];
 			}
 		}
+		GImage cropImage = new GImage(pixels1);
+		return();
 		
 	}
 	
