@@ -18,11 +18,10 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 	private int rows (int [][] source) {
 		return source.length;
 	}
-	
 	private int columns (int [][] source) {
 		return source[0].length;
 	}
-
+	private int numberOfRows = 
 	/*
 	 * rotates an image 90 degrees counterclockwise
 	 */
