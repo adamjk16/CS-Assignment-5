@@ -124,7 +124,7 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 				int avgPixels = 0;
 				for (int i = r - 1; i<= r + 1; i++) {
 					for (int j = c - 1; j <= c + 1; j++) {
-					if (i >= 0 && i < pixels.length && j >=0 && j < pixels[r].length) {	
+					if (i > 0 && i < pixels.length && j > 0 && j < pixels[r].length) {	
 						int red = GImage.getRed(pixels[i][j]);
 						redTotal += red;
 						int green = GImage.getGreen(pixels[i][j]);
