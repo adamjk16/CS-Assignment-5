@@ -155,10 +155,11 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 			for (int c = 0; c < cropHeight; c++) {
 				int oldPIxel  = cropX + r;
 				int oldPIxely  = cropY + c;
-				int newPixelx = r;
-				int newpIxely = c;
+			
+				pixels1 [r][c] = GImage (pixels[cropWidth][cropHeight]);
 			}
-		}	
+		}
+		
 	}
 	
 	public void mouseClicked (MouseEvent e) {
