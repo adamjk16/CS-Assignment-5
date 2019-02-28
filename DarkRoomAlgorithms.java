@@ -208,7 +208,7 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 		int [] cumulativeEqualize = new int [256];
 		cumulativeEqualize[0] = equalize[0];
 		for (int i = 0;i < cumulativeEqualize.length - 1; i++) {
-			cumulativeEqualize[i + 1] = equalize[i+1] + cumulativeEqualize[i]; 
+			cumulativeEqualize[i + 1] = equalize[i + 1] + cumulativeEqualize[i]; 
 		}
 		return cumulativeEqualize;
 	}
