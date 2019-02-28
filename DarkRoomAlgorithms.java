@@ -34,7 +34,7 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 		int [][] rotateLeft = new int[numberOfColumns][numberOfRows];
 		for (int row = 0; row < numberOfRows; row++) {
 			for (int column = 0; column < numberOfColumns; column++) {
-				rotateLeft[numberOfColumns - 1 - column][row] = pixels[row][column];			//flips and switches row and column
+				rotateLeft[numberOfColumns - 1 - column][row] = pixels[row][column];			//flips and switches pixel row and column
 			}
 		}	
 		GImage rotateLeftImage = new GImage(rotateLeft);
@@ -52,23 +52,24 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 		int [][] rotateRight = new int [numberOfColumns][numberOfRows];
 		for (int row = 0; row < numberOfRows; row++) {
 			for (int column = 0; column < numberOfColumns; column++) {
-				rotateRight[column][numberOfRows - 1 - row] = pixels[row][column]; 								//switches row and column
+				rotateRight[column][numberOfRows - 1 - row] = pixels[row][column]; 								//switches pixel row and column
 			}
 		}	
 		GImage rotateRightImage = new GImage(rotateRight);
 		return rotateRightImage;
 	}
-
+	
+	/*
+	 * rotates an image 180 degrees
+	 */
 	public GImage flipHorizontal(GImage source) {
 		int [][] pixels = source.getPixelArray();
-		int rows = rows(pixels);
-		int columns = columns(pixels);
-		int [][] flipHorizontal = new int [rows][columns];
-		for (int r = 0; r < rows; r++) {
-			for (int c = 0; c < columns; c++) {
-				int flipRow = r;
-				int flipColumn = (columns - 1)  - c;
-				flipHorizontal[flipRow][flipColumn] = pixels[r][c];
+		int numberOfRows = rows(pixels);
+		int numberOfColumns = columns(pixels);
+		int [][] flipHorizontal = new int [numberOfRows][numberOfColumns];
+		for (int row = 0; row < numberOfRows; row++) {
+			for (int column = 0; column < numberOfColumns; column++) {
+				flipHorizontal[row][numberOfColumns - 1 - column] = pixels[numberOfRows][numberOfColumns];		//places each row of pixels in opposite order
 			}
 		}	
 		GImage flippedImage = new GImage(flipHorizontal);
