@@ -31,10 +31,10 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 		int [][] pixels = source.getPixelArray();
 		int numberOfRows = rows(pixels);
 		int numberOfColumns = columns(pixels);
-		int [][] rotateLeft = new int[numberOfColumns][numberOfRows];
+		int [][] rotateLeft = new int[numberOfRows][numberOfColumns];
 		for (int row = 0; row < numberOfRows; row++) {
-			for (int column = 0; column < numberOfColumns; column++) {;
-				rotateLeft[numberOfColumns - 1 - column][row] = pixels[numberOfRows][numberOfColumns];			//flips and switches row and column
+			for (int column = 0; column < numberOfColumns; column++) {
+				rotateLeft[row][numberOfColumns - 1 - column] = pixels[numberOfColumns][numberOfRows];			//flips and switches row and column
 			}
 		}	
 		GImage rotateLeftImage = new GImage(rotateLeft);
