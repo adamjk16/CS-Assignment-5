@@ -115,16 +115,18 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 	
 	public GImage blur(GImage source) {								//received help in LAIR
 		int [][] pixels = source.getPixelArray();
-		int [][] blur = new int [pixels.length][pixels[0].length];
-		for (int r = 0; r < pixels.length; r++) {
-			for (int c = 0; c < pixels[r].length; c++) {
+		int rows = rows(pixels);
+		int columns = columns(pixels);
+		int [][] blur = new int [rows][columns];
+		for (int r = 0; r < rows; r++) {
+			for (int c = 0; c < columns; c++) {
 				int redTotal = 0;
 				int greenTotal = 0;
 				int blueTotal = 0;
 				int avgPixels = 0;
 				for (int i = r - 1; i<= r + 1; i++) {
 					for (int j = c - 1; j <= c + 1; j++) {
-					if (i > 0 && i < pixels.length && j > 0 && j < pixels[r].length) {	
+					if (i > 0 && i < rows && j > 0 && j < columns) {	
 						int red = GImage.getRed(pixels[i][j]);
 						redTotal += red;
 						int green = GImage.getGreen(pixels[i][j]);
