@@ -1,13 +1,13 @@
-/* 
- * Note: these methods are public in order for them to be used by other files
- * in this assignment; DO NOT change them to private.  You may add additional
- * private methods to implement required functionality if you would like.
+/*
+ * File: Breakout.java
+ * -------------------
+ * Name: Adam Kincer
+ * Section Leader: Christian Davis
  * 
- * You should remove the stub lines from each method and replace them with your
- * implementation that returns an updated image.
+ * This program can perform a variety of functions on 
+ * a given photo including rotating it left, rotating it 
+ * right, flipping it horizontally,
  */
-
-// TODO: comment this file explaining its behavior
 
 import java.awt.event.MouseEvent;
 
