@@ -22,7 +22,7 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 	private int columns (int [][] source) {
 		return source[0].length;
 	}
-	
+
 	/*
 	 * rotates an image 90 degrees counterclockwise
 	 */
@@ -97,23 +97,24 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 		return negativeImage;	
 	}
 	/*
-	 * 
+	 * takes an image in front of a green screen and overlays it onto a background
 	 */
+	
 	public GImage greenScreen(GImage source) {
 		int [][] pixels = source.getPixelArray();
-		int rows = rows(pixels);
-		int columns = columns(pixels);
-		for (int r = 0; r < rows; r++) {
-			for (int c = 0; c < columns; c++) {
-				int greenScreenPixel = pixels[r][c];
+		int numberOfRows = rows(pixels);
+		int numberOfColumns = columns(pixels);
+		for (int row = 0; row < numberOfRows; row++) {
+			for (int column = 0; column < numberOfColumns; column++) {
+				int greenScreenPixel = pixels[row][column];
 				int red = GImage.getRed(greenScreenPixel); 
 				int green = GImage.getGreen(greenScreenPixel);
 				int blue = GImage.getBlue(greenScreenPixel);
 				int max = Math.max(red, blue);
 				if (green >= 2 * max) {
-					pixels [r][c] = GImage.createRGBPixel (red, green, blue, 0);
+					pixels [row][column] = GImage.createRGBPixel (red, green, blue, 0);
 				} else {
-					pixels [r][c] = GImage.createRGBPixel (red, green, blue);
+					pixels [row][column] = GImage.createRGBPixel (red, green, blue);
 				}
 			}
 		}	
