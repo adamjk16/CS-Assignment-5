@@ -153,8 +153,8 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 		int [][] pixels1 = new int [cropWidth][cropHeight];
 		for (int r = 0; r < cropHeight; r++) {
 			for (int c = 0; c < cropWidth; c++) {
-				int oldPIxel  = cropX + r;
-				int oldPIxely  = cropY + c;
+				int oldPIxel  = cropY + r;
+				int oldPIxely  = cropX + c;
 				pixels1 [r][c] = pixels [oldPIxel][oldPIxely];
 			}
 		}
