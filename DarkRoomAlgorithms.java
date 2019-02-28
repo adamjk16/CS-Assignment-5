@@ -60,7 +60,7 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 	}
 	
 	/*
-	 * rotates an image 180 degree
+	 * rotates an image 180 degrees
 	 */
 	public GImage flipHorizontal(GImage source) {
 		int [][] pixels = source.getPixelArray();
@@ -69,25 +69,29 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 		int [][] flipHorizontal = new int [numberOfRows][numberOfColumns];
 		for (int row= 0; row < numberOfRows; row++) {
 			for (int column = 0; column < numberOfColumns; column++) {
-				flipHorizontal[row][numberOfColumns - 1 - column] = pixels[row][column];
+				flipHorizontal[row][numberOfColumns - 1 - column] = pixels[row][column];			//reverses the order of pixels of each row			
 			}
 		}	
 		GImage flippedImage = new GImage(flipHorizontal);
 		return flippedImage;
 	}
-
+	
+	/*
+	 * inverts each color of the picture
+	 */
+	
 	public GImage negative(GImage source) {
 		int [][] pixels = source.getPixelArray();
-		int rows = rows(pixels);
-		int columns = columns(pixels);
-		int [][] negative = new int [rows][columns];
-		for (int r = 0; r < rows; r++) {
-			for (int c = 0; c < columns; c++) {
-				int negativePixel = pixels[r][c];
+		int numberOfRows = rows(pixels);
+		int numberOfColumns = columns(pixels);
+		int [][] negative = new int [numberOfRows][numberOfColumns];
+		for (int row = 0; row < numberOfRows; row++) {
+			for (int column = 0; column < numberOfColumns; column++) {
+				int negativePixel = pixels[row][column];
 				int red = 255 - GImage.getRed(negativePixel); 
 				int green = 255 - GImage.getGreen(negativePixel);
 				int blue = 255 - GImage.getBlue(negativePixel);
-				negative[r][c] = GImage.createRGBPixel(red, blue, green);
+				negative[row][column] = GImage.createRGBPixel(red, blue, green);
 			}
 		}	
 		GImage negativeImage = new GImage(negative);
