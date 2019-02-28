@@ -160,7 +160,7 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 			}
 		}
 		GImage cropImage = new GImage(pixels1);
-		return();
+		return cropImage;
 		
 	}
 	
