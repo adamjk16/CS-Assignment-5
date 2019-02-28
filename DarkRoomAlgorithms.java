@@ -30,7 +30,7 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 		int [][] rotateLeft = new int[columns][rows];
 		for (int r = 0; r < rows; r++) {
 			for (int c = 0; c < columns; c++) {;
-				rotateLeft[columns - 1 - c][r] = pixels[r][c];
+				rotateLeft[c][r] = pixels[r][c];
 			}
 		}	
 		GImage rotateLeftImage = new GImage(rotateLeft);
