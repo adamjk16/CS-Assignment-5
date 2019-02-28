@@ -207,7 +207,7 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 	private int [] cumulativeLuminosityHistogram(int[] equalize) {
 		int [] cumulativeEqualize = new int [256];
 		for (int i = 1; i < 256; i++) {
-			cumulativeEqualize[i] = equalize[i + 1] + cumulativeEqualize[i]; 
+			cumulativeEqualize[i + 1] = equalize[i + 1] + cumulativeEqualize[i]; 
 		}
 		return cumulativeEqualize;
 	}
