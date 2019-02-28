@@ -84,16 +84,17 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 		int [][] pixels = source.getPixelArray();
 		int numberOfRows = rows(pixels);
 		int numberOfColumns = columns(pixels);
+		int [][] negative = new int [numberOfRows][numberOfColumns];
 		for (int row = 0; row < numberOfRows; row++) {
 			for (int column = 0; column < numberOfColumns; column++) {
-				int  negativePixel = pixels[row][column];
-				int red = 255 - GImage.getRed(negativePixel); 						//inputs each color into negative pixel array
+				int negativePixel = pixels[row][column];							//makes an array of negative pixels
+				int red = 255 - GImage.getRed(negativePixel); 						//inputs each color 
 				int green = 255 - GImage.getGreen(negativePixel);
 				int blue = 255 - GImage.getBlue(negativePixel);
-				pixels[row][column] = GImage.createRGBPixel(red, blue, green);		//inverts color of each pixel
+				negative[row][column] = GImage.createRGBPixel(red, blue, green);
 			}
 		}	
-		GImage negativeImage = new GImage(pixels);
+		GImage negativeImage = new GImage(negative);
 		return negativeImage;	
 	}
 
