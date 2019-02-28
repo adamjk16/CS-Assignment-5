@@ -122,28 +122,28 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 	}	
 	
 	/*
-	 * blurs an image
+	 * (n
 	 */
 	
 	public GImage blur(GImage source) {								//received help in LAIR
 		int [][] pixels = source.getPixelArray();
-		int numberOfRows = rows(pixels);
-		int numberOfColumns = columns(pixels);
-		int [][] blur = new int [numberOfRows][numberOfColumns];
-		for (int row = 0; row < numberOfRows; row++) {
-			for (int column = 0; column < numberOfColumns; column++) {
+		int rows = rows(pixels);
+		int columns = columns(pixels);
+		int [][] blur = new int [rows][columns];
+		for (int r = 0; r < rows; r++) {
+			for (int c = 0; c < columns; c++) {
 				int redTotal = 0;
 				int greenTotal = 0;
 				int blueTotal = 0;
 				int avgPixels = 0;
-				for (int surroundingRows = row - 1; surroundingRows < row + 1; surroundingRows++) {
-					for (int surroundingColumns = column - 1; surroundingColumns < column + 1; surroundingColumns++) {
-						if (surroundingRows >= 0 && surroundingRows < numberOfRows && surroundingColumns >= 0 && surroundingColumns < numberOfColumns) {	
-							int red = GImage.getRed(pixels[surroundingColumns][surroundingRows]);
+				for (int i = r - 1; i<= r + 1; i++) {
+					for (int j = c - 1; j <= c + 1; j++) {
+						if (i > 0 && i < rows && j > 0 && j < columns) {	
+							int red = GImage.getRed(pixels[i][j]);
 							redTotal += red;
-							int green = GImage.getGreen(pixels[surroundingColumns][surroundingRows]);
+							int green = GImage.getGreen(pixels[i][j]);
 							greenTotal += green;
-							int blue = GImage.getBlue(pixels[surroundingColumns][surroundingRows]);
+							int blue = GImage.getBlue(pixels[i][j]);
 							blueTotal += blue;
 							avgPixels++;
 						}
@@ -152,28 +152,25 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 		int avgRed = redTotal / avgPixels;
 		int avgGreen = greenTotal / avgPixels;
 		int avgBlue = blueTotal / avgPixels;
-		blur[row][column] = GImage.createRGBPixel(avgRed, avgGreen, avgBlue);		
+		blur[r][c] = GImage.createRGBPixel(avgRed, avgGreen, avgBlue);		
 			}
 		}
 		GImage blurredImage = new GImage(blur);
 		return blurredImage;
 	}
 	
-	/*
-	 * resizes an image based on user specification
-	 */
-	
+
 	public GImage crop(GImage source, int cropX, int cropY, int cropWidth, int cropHeight) {
 		int [][] pixels = source.getPixelArray();
-		int [][] cropPixels = new int [cropHeight][cropWidth];
-		for (int row = 0; row < cropHeight; row++) {
-			for (int column = 0; column < cropWidth; column++) {
-				int oldPixelX  = cropY + row;
-				int oldPixelY  = cropX + column;
-				cropPixels [row][column] = pixels [oldPixelX][oldPixelY];
+		int [][] pixels1 = new int [cropHeight][cropWidth];
+		for (int r = 0; r < cropHeight; r++) {
+			for (int c = 0; c < cropWidth; c++) {
+				int oldPIxel  = cropY + r;
+				int oldPIxely  = cropX + c;
+				pixels1 [r][c] = pixels [oldPIxel][oldPIxely];
 			}
 		}
-		GImage cropImage = new GImage(cropPixels);
+		GImage cropImage = new GImage(pixels1);
 		return cropImage;	
 	}
 	
