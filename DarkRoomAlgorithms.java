@@ -189,12 +189,12 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 	
 	private int [] luminosityHistogram(GImage source) {
 		int [][] pixels = source.getPixelArray();
-		int rows = rows(pixels);
-		int columns = columns(pixels);
+		int numberOfRows = rows(pixels);
+		int numberOfColumns = columns(pixels);
 		int [] equalize = new int [255];
-		for (int r = 0; r < rows; r++) {
-			for (int c = 0; c < columns; c++) {
-				int color = pixels[r][c];
+		for (int row = 0; row < numberOfRows; row++) {
+			for (int column = 0; column < numberOfColumns; column++) {
+				int color = pixels[row][column];
 				int red = GImage.getRed(color); 
 				int green = GImage.getGreen(color);
 				int blue = GImage.getBlue(color);
