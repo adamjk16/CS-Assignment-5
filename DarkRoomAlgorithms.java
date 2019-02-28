@@ -136,14 +136,14 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 				int greenTotal = 0;
 				int blueTotal = 0;
 				int avgPixels = 0;
-				for (int surroudingRow = row - 1; surroundingRow <= row + 1; surroundingRow++) {
-					for (int j = column - 1; j <= column + 1; j++) {
-						if (i > 0 && i < numberOfRows && j > 0 && j < numberOfColumns) {	
-							int red = GImage.getRed(pixels[surroundingRow][j]);
+				for (int surroundingRow = row - 1; surroundingRow <= row + 1; surroundingRow++) {
+					for (int surroundingColumn = column - 1; surroundingColumn <= column + 1; surroundingColumn++) {
+						if (surroundingRow > 0 && surroundingRow < numberOfRows && surroundingColumn > 0 && surroundingColumn < numberOfColumns) {	
+							int red = GImage.getRed(pixels[surroundingRow][surroundingColumn]);
 							redTotal += red;
-							int green = GImage.getGreen(pixels[surroundingRow][j]);
+							int green = GImage.getGreen(pixels[surroundingRow][surroundingColumn]);
 							greenTotal += green;
-							int blue = GImage.getBlue(pixels[surroundingRow][j]);
+							int blue = GImage.getBlue(pixels[surroundingRow][surroundingColumn]);
 							blueTotal += blue;
 							avgPixels++;
 						}
