@@ -159,18 +159,20 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 		return blurredImage;
 	}
 	
-
+	/*
+	 * resizes an image based on user specification
+	 */
 	public GImage crop(GImage source, int cropX, int cropY, int cropWidth, int cropHeight) {
 		int [][] pixels = source.getPixelArray();
-		int [][] pixels1 = new int [cropHeight][cropWidth];
-		for (int r = 0; r < cropHeight; r++) {
-			for (int c = 0; c < cropWidth; c++) {
-				int oldPIxel  = cropY + r;
-				int oldPIxely  = cropX + c;
-				pixels1 [r][c] = pixels [oldPIxel][oldPIxely];
+		int [][] cropPixels = new int [cropHeight][cropWidth];
+		for (int row = 0; row < cropHeight; row++) {
+			for (int column = 0; column < cropWidth; column++) {
+				int oldPixelX  = cropY + row;
+				int oldPixelY  = cropX + column;
+				cropPixels [row][column] = pixels [oldPixelX][oldPixelY];
 			}
 		}
-		GImage cropImage = new GImage(pixels1);
+		GImage cropImage = new GImage(cropPixels);
 		return cropImage;	
 	}
 	
