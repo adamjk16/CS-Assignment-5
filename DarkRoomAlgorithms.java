@@ -162,6 +162,7 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 	/*
 	 * resizes an image based on user specification
 	 */
+	
 	public GImage crop(GImage source, int cropX, int cropY, int cropWidth, int cropHeight) {
 		int [][] pixels = source.getPixelArray();
 		int [][] cropPixels = new int [cropHeight][cropWidth];
