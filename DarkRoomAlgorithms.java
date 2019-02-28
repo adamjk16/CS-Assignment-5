@@ -110,8 +110,7 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 				int red = GImage.getRed(greenScreenPixel); 
 				int green = GImage.getGreen(greenScreenPixel);
 				int blue = GImage.getBlue(greenScreenPixel);
-				int max = Math.max(red, blue);
-				if (green >= 2 * max) {
+				if (green >= 2 * Math.max(red, blue)) {
 					pixels [row][column] = GImage.createRGBPixel (red, green, blue, 0);
 				} else {
 					pixels [row][column] = GImage.createRGBPixel (red, green, blue);
@@ -122,7 +121,9 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 		return greenScreenImage;
 	}	
 	
-
+	/*
+	 * blurs an image
+	 */
 	
 	public GImage blur(GImage source) {								//received help in LAIR
 		int [][] pixels = source.getPixelArray();
