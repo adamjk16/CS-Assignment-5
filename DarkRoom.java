@@ -135,6 +135,10 @@ public class DarkRoom extends GraphicsProgram {
 			GImage newImage = algorithms.negative(currentImage);
 			setImage(newImage);
 			infoLabel.setText(command + " filter applied.");
+		} else if (command.equals("Negative")) {
+				GImage newImage = algorithms.filter(currentImage);
+				setImage(newImage);
+				infoLabel.setText(command + " filter applied.");	
 		} else if (command.equals("Crop")) {
 			if (currentlySelecting) {
 				GImage newImage = algorithms.crop(currentImage, (int) selectedArea.getX(), 
@@ -152,7 +156,7 @@ public class DarkRoom extends GraphicsProgram {
 			infoLabel.setText(command + " filter applied.");	
 		} else {
 			infoLabel.setText("Unknown command " + command + ".");
-		}
+		} 
 		deselect();
 	}
 
