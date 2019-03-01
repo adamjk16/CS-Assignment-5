@@ -227,7 +227,8 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 	}
 	
 	/*
-	 * spreads luminosity values of pixels as far across possible range as possible
+	 * spreads luminosity values of pixels as far across possible luminosity
+	 * range as possible, increasing contrast
 	 */
 	
 	private int[][] increaseContrast(int[] cumulativeEqualize, GImage source) {
