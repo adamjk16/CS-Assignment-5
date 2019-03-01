@@ -226,6 +226,10 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 		return cumulativeEqualize;
 	}
 	
+	/*
+	 * spreads luminosity values of pixels as far across possible range as possible
+	 */
+	
 	private int[][] increaseContrast(int[] cumulativeEqualize, GImage source) {
 		int [][] pixels = source.getPixelArray();
 		int numberOfRows = rows(pixels);
