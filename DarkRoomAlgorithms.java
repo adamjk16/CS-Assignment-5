@@ -236,6 +236,10 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 		return contrast;
 	}
 	
+	/*
+	 * puts pink filter over image
+	 */
+	
 	public GImage filter(GImage source) {
 		int [][] pixels = source.getPixelArray();
 		for (int row = 0; row < rows(pixels); row++) {
