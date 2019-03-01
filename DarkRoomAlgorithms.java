@@ -1,5 +1,5 @@
 /*
- * File: Breakout.java
+ * File: DarkRoomAlgorithms.java
  * -------------------
  * Name: Adam Kincer
  * Section Leader: Christian Davis
