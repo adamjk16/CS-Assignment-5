@@ -258,10 +258,10 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 		int numberOfColumns = columns(pixels);
 		for (int row = 0; row < numberOfRows; row++) {
 			for (int column = 0; column < numberOfColumns; column++) {
-				int pinkPixels = pixels[row][column];							
-				int red = GImage.getRed(negativePixels); 						
-				int green = 255 - GImage.getGreen(negativePixels);
-				int blue = 255 - GImage.getBlue(negativePixels);
+				int filterPixels = pixels[row][column];							
+				int red = GImage.getRed(filterPixels); 						
+				int green = 255 - GImage.getGreen(filterPixels);
+				int blue = 255 - GImage.getBlue(filterPixels);
 				pixels[row][column] = GImage.createRGBPixel(red, blue, green);
 			}
 		}	
