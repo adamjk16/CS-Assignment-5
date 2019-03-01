@@ -178,6 +178,10 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 		return cropImage;	
 	}
 	
+	/*
+	 * 
+	 */
+	
 	public GImage equalize(GImage source) {
 		int[] equalize = luminosityHistogram(source);
 		int[] cumulativeEqualize = cumulativeLuminosityHistogram(equalize);
