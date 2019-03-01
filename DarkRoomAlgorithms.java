@@ -198,7 +198,7 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 				int green = GImage.getGreen(equalizePixel);
 				int blue = GImage.getBlue(equalizePixel);
 				int luminosity = computeLuminosity(red, green, blue);
-				equalize[luminosity]++;
+				equalize[luminosity] = equalize[luminosity] + equalize[luminosity];
 			}
 		}
 		return equalize;
@@ -207,7 +207,7 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 	private int [] cumulativeLuminosityHistogram(int[] equalize) {
 		int [] cumulativeEqualize = new int [256];
 		for (int i = 0; i < 255; i++) {
-			
+			cumulativeEqualize[i + 1] = cumulativeEqualize[i] + equalize[i + 1];
 		}
 		return cumulativeEqualize;
 	}
