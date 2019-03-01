@@ -39,6 +39,7 @@ public interface DarkRoomAlgorithmsInterface {
 	public GImage negative(GImage source);
 	public GImage crop(GImage source, int cropX, int cropY, int cropWidth, int cropHeight);
 	public GImage blur(GImage source);
+	public GImage filter(GImage source);
 	
 	/* Helper method to compute the luminosity of an RGB pixel (from 11.7 in the book) */
 	public default int computeLuminosity(int r, int g, int b) {
