@@ -135,7 +135,7 @@ public class DarkRoom extends GraphicsProgram {
 			GImage newImage = algorithms.negative(currentImage);
 			setImage(newImage);
 			infoLabel.setText(command + " filter applied.");
-		} else if (command.equals("Negative")) {
+		} else if (command.equals("Filter")) {
 				GImage newImage = algorithms.filter(currentImage);
 				setImage(newImage);
 				infoLabel.setText(command + " filter applied.");	
