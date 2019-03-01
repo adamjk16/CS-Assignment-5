@@ -29,12 +29,10 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 	
 	public GImage rotateLeft(GImage source) {
 		int [][] pixels = source.getPixelArray();
-		int numberOfRows = rows(pixels);
-		int numberOfColumns = columns(pixels);
-		int [][] rotateLeft = new int[numberOfColumns][numberOfRows];
-		for (int row = 0; row < numberOfRows; row++) {
-			for (int column = 0; column < numberOfColumns; column++) {
-				rotateLeft[numberOfColumns - 1 - column][row] = pixels[row][column];			//flips and switches pixel row and column
+		int [][] rotateLeft = new int[columns(pixels)][rows(pixels)];
+		for (int row = 0; row < rows(pixels); row++) {
+			for (int column = 0; column < columns(pixels); column++) {
+				rotateLeft[columns(pixels) - 1 - column][row] = pixels[row][column];			//flips and switches pixel row and column
 			}
 		}	
 		GImage rotateLeftImage = new GImage(rotateLeft);
@@ -47,12 +45,10 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 	
 	public GImage rotateRight(GImage source) {
 		int [][] pixels = source.getPixelArray();
-		int numberOfRows = rows(pixels);
-		int numberOfColumns = columns(pixels);
-		int [][] rotateRight = new int [numberOfColumns][numberOfRows];
-		for (int row = 0; row < numberOfRows; row++) {
-			for (int column = 0; column < numberOfColumns; column++) {
-				rotateRight[column][numberOfRows - 1 - row] = pixels[row][column]; 								//switches pixel row and column
+		int [][] rotateRight = new int [columns(pixels)][rows(pixels)];
+		for (int row = 0; row < rows(pixels); row++) {
+			for (int column = 0; column < columns(pixels); column++) {
+				rotateRight[column][rows(pixels) - 1 - row] = pixels[row][column]; 								//switches pixel row and column
 			}
 		}	
 		GImage rotateRightImage = new GImage(rotateRight);
@@ -64,12 +60,10 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 	 */
 	public GImage flipHorizontal(GImage source) {
 		int [][] pixels = source.getPixelArray();
-		int numberOfRows = rows(pixels);
-		int numberOfColumns = columns(pixels);
-		int [][] flipHorizontal = new int [numberOfRows][numberOfColumns];
-		for (int row= 0; row < numberOfRows; row++) {
-			for (int column = 0; column < numberOfColumns; column++) {
-				flipHorizontal[row][numberOfColumns - 1 - column] = pixels[row][column];			//reverses the order of pixels of each row			
+		int [][] flipHorizontal = new int [rows(pixels)][columns(pixels)];
+		for (int row= 0; row < rows(pixels); row++) {
+			for (int column = 0; column < columns(pixels); column++) {
+				flipHorizontal[row][columns(pixels) - 1 - column] = pixels[row][column];			//reverses the order of pixels of each row			
 			}
 		}	
 		GImage flippedImage = new GImage(flipHorizontal);
@@ -82,10 +76,8 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 	
 	public GImage negative(GImage source) {
 		int [][] pixels = source.getPixelArray();
-		int numberOfRows = rows(pixels);
-		int numberOfColumns = columns(pixels);
-		for (int row = 0; row < numberOfRows; row++) {
-			for (int column = 0; column < numberOfColumns; column++) {
+		for (int row = 0; row < rows(pixels); row++) {
+			for (int column = 0; column < columns(pixels); column++) {
 				int negativePixels = pixels[row][column];							
 				int red = 255 - GImage.getRed(negativePixels); 						
 				int green = 255 - GImage.getGreen(negativePixels);
@@ -102,10 +94,8 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 	
 	public GImage greenScreen(GImage source) {
 		int [][] pixels = source.getPixelArray();
-		int numberOfRows = rows(pixels);
-		int numberOfColumns = columns(pixels);
-		for (int row = 0; row < numberOfRows; row++) {
-			for (int column = 0; column < numberOfColumns; column++) {
+		for (int row = 0; row < rows(pixels); row++) {
+			for (int column = 0; column < columns(pixels); column++) {
 				int greenScreenPixel = pixels[row][column];
 				int red = GImage.getRed(greenScreenPixel); 
 				int green = GImage.getGreen(greenScreenPixel);
@@ -127,18 +117,16 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 	
 	public GImage blur(GImage source) {								//received help in LAIR
 		int [][] pixels = source.getPixelArray();
-		int numberOfRows = rows(pixels);
-		int numberOfColumns = columns(pixels);
-		int [][] blur = new int [numberOfRows][numberOfColumns];
-		for (int row = 0; row < numberOfRows; row++) {
-			for (int column = 0; column < numberOfColumns; column++) {
+		int [][] blur = new int [rows(pixels)][columns(pixels)];
+		for (int row = 0; row < rows(pixels); row++) {
+			for (int column = 0; column < columns(pixels); column++) {
 				int redTotal = 0;
 				int greenTotal = 0;
 				int blueTotal = 0;
 				int avgPixels = 0;
 				for (int surroundingRow = row - 1; surroundingRow <= row + 1; surroundingRow++) {
 					for (int surroundingColumn = column - 1; surroundingColumn <= column + 1; surroundingColumn++) {
-						if (surroundingRow > 0 && surroundingRow < numberOfRows && surroundingColumn > 0 && surroundingColumn < numberOfColumns) {	
+						if (surroundingRow > 0 && surroundingRow < rows(pixels) && surroundingColumn > 0 && surroundingColumn < columns(pixels)) {	
 							int blurPixels = pixels [surroundingRow][surroundingColumn];
 							int red = GImage.getRed(blurPixels);
 							redTotal += red;
@@ -198,11 +186,9 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 	
 	private int[] luminosityHistogram(GImage source) {
 		int [][] pixels = source.getPixelArray();
-		int numberOfRows = rows(pixels);
-		int numberOfColumns = columns(pixels);
 		int [] equalize = new int [256];
-		for (int row = 0; row < numberOfRows; row++) {
-			for (int column = 0; column < numberOfColumns; column++) {
+		for (int row = 0; row < rows(pixels); row++) {
+			for (int column = 0; column < columns(pixels); column++) {
 				int equalizePixel = pixels[row][column];
 				int red = GImage.getRed(equalizePixel); 
 				int green = GImage.getGreen(equalizePixel);
@@ -234,18 +220,16 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 	
 	private int[][] increaseContrast(int[] cumulativeEqualize, GImage source) {
 		int [][] pixels = source.getPixelArray();
-		int numberOfRows = rows(pixels);
-		int numberOfColumns = columns(pixels);
-		int [][] contrast = new int [numberOfRows][numberOfColumns];
-		for (int row = 0; row < numberOfRows; row++) {
-			for (int column = 0; column < numberOfColumns; column++) {
+		int [][] contrast = new int [rows(pixels)][columns(pixels)];
+		for (int row = 0; row < rows(pixels); row++) {
+			for (int column = 0; column < columns(pixels); column++) {
 				int color = pixels[row][column];
 				int red = GImage.getRed(color); 
 				int green = GImage.getGreen(color);
 				int blue = GImage.getBlue(color);
 				int luminosity = computeLuminosity(red, green, blue);
 				int numPixelsLess = cumulativeEqualize[luminosity];
-				int newRGB = 255 * numPixelsLess/(numberOfRows * numberOfColumns);
+				int newRGB = 255 * numPixelsLess/(rows(pixels) * columns(pixels));
 				contrast[row][column] = GImage.createRGBPixel(newRGB, newRGB, newRGB);
 			}
 		}	
@@ -254,10 +238,8 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 	
 	public GImage filter(GImage source) {
 		int [][] pixels = source.getPixelArray();
-		int numberOfRows = rows(pixels);
-		int numberOfColumns = columns(pixels);
-		for (int row = 0; row < numberOfRows; row++) {
-			for (int column = 0; column < numberOfColumns; column++) {
+		for (int row = 0; row < rows(pixels); row++) {
+			for (int column = 0; column < columns(pixels); column++) {
 				int filterPixels = pixels[row][column];							
 				int red = GImage.getRed(filterPixels); 						
 				int blue = GImage.getBlue(filterPixels);
