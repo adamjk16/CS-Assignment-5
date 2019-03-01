@@ -251,5 +251,22 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 		}	
 		return contrast;
 	}
+	
+	public GImage filter(GImage source) {
+		int [][] pixels = source.getPixelArray();
+		int numberOfRows = rows(pixels);
+		int numberOfColumns = columns(pixels);
+		for (int row = 0; row < numberOfRows; row++) {
+			for (int column = 0; column < numberOfColumns; column++) {
+				int pinkPixels = pixels[row][column];							
+				int red = GImage.getRed(negativePixels); 						
+				int green = 255 - GImage.getGreen(negativePixels);
+				int blue = 255 - GImage.getBlue(negativePixels);
+				pixels[row][column] = GImage.createRGBPixel(red, blue, green);
+			}
+		}	
+		GImage negativeImage = new GImage(pixels);
+		return negativeImage;	
+	}
 }	
 
