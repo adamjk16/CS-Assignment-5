@@ -6,7 +6,8 @@
  * 
  * This program can perform a variety of functions on 
  * a given photo including rotating it left, rotating it 
- * right, flipping it horizontally,
+ * right, flipping it horizontally, making the image negative,
+ * producing a green screen, blurring the image, or equalizing the image.
  */
 
 import java.awt.event.MouseEvent;
@@ -14,7 +15,7 @@ import java.awt.event.MouseEvent;
 import acm.graphics.*;
 
 public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
-
+	
 	private int rows (int [][] source) {
 		return source.length;
 	}
