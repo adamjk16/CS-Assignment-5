@@ -179,11 +179,12 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 	}
 	
 	/*
-	 * 
+	 * grayscales the image and spreads the luminosity of its pixels 
+	 * to sharpen image by increasing contrast
 	 */
 	
 	public GImage equalize(GImage source) {
-		int[] equalize = luminosityHistogram(source);
+		int[] equalize = luminosityHistogram(source);								//creates array for luminostity histogram
 		int[] cumulativeEqualize = cumulativeLuminosityHistogram(equalize);
 		int[][] contrast = increaseContrast(cumulativeEqualize, source);
 		GImage equalizeImage = new GImage(contrast);
