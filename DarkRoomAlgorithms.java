@@ -184,7 +184,7 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 	 */
 	
 	public GImage equalize(GImage source) {
-		int[] equalize = luminosityHistogram(source);								//creates array for luminostity histogram
+		int[] equalize = luminosityHistogram(source);								//creates array for luminosity histogram (number of pixels in image with given luminosity)
 		int[] cumulativeEqualize = cumulativeLuminosityHistogram(equalize);
 		int[][] contrast = increaseContrast(cumulativeEqualize, source);
 		GImage equalizeImage = new GImage(contrast);
