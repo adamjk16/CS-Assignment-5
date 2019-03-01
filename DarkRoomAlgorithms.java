@@ -262,7 +262,7 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 				int red = GImage.getRed(filterPixels); 						
 				int green = 255 - GImage.getGreen(filterPixels);
 				int blue = 255 - GImage.getBlue(filterPixels);
-				pixels[row][column] = GImage.createRGBPixel(red, blue, green);
+				pixels[row][column] = GImage.createRGBPixel(red, blue, 0);
 			}
 		}	
 		GImage negativeImage = new GImage(pixels);
