@@ -89,6 +89,7 @@ public class DarkRoom extends GraphicsProgram {
 		add(new JButton("Blur"), WEST);
 		add(new JButton("Crop"), WEST);
 		add(new JButton("Equalize"), WEST);
+		add(new JButton("Filter"), WEST);
 
 		infoLabel = new JLabel("Welcome to DarkRoom!");
 		add(infoLabel, NORTH);
