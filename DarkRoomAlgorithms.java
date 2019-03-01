@@ -229,7 +229,7 @@ public class DarkRoomAlgorithms implements DarkRoomAlgorithmsInterface {
 				int blue = GImage.getBlue(color);
 				int luminosity = computeLuminosity(red, green, blue);
 				int numPixelsLess = cumulativeEqualize[luminosity];
-				int newRGB = 255 * numPixelsLess/(rows(pixels) * columns(pixels));
+				int newRbg = 255 * numPixelsLess/(rows(pixels) * columns(pixels));
 				contrast[row][column] = GImage.createRGBPixel(newRGB, newRGB, newRGB);
 			}
 		}	
